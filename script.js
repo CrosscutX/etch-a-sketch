@@ -42,16 +42,19 @@ btn.addEventListener('click', () =>{
         });
         createGrid(resize);
     
-        //This is important, without reassiging rowClass and sketch we will have nothing 
+        //Without reassiging rowClass and sketch we will have nothing 
         //selected and reset will not work the second time
-        
         rowClass = document.querySelectorAll('.box-row');
         sketch = document.querySelectorAll('.box');
+        
         sketch.forEach(box => {
             box.addEventListener('mouseenter' , () => {
                 box.style.backgroundColor = 'black';
             });
         });
+        //Makes cancel break out with alerting
+    }else if(resize == null){
+        return;
     }else{
         alert('Invalid input');
     }
